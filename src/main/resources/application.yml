@@ -25,3 +25,7 @@ redis:
 logging:
   level:
     com.yue.api.mapper: debug
+
+mybatis-plus:
+  check-config-location:
+    cache-enabled: true
