@@ -1,9 +1,11 @@
 package com.yue.api;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@MapperScan(basePackages = "com.yue.api.mapper")
 public class ApiApplication {
 
 	public static void main(String[] args) {
