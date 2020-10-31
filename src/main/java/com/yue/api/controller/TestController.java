@@ -28,6 +28,8 @@ public class TestController {
     public String page(int page) {
         System.out.println(" page:   " + page);
         List<UserInfo> userInfos = userInfoService.selectAllList(page);
+
+
         return new Gson().toJson(userInfos);
     }
 
@@ -41,12 +43,15 @@ public class TestController {
 
     @RequestMapping("/test")
     public String test() {
+        List<UserInfo> name = (List<UserInfo>) redisService.get("userInfo");
 
 
-        Object name = redisService.get("name");
-        System.out.print("====" + (name));
+        for (UserInfo userInfo : name) {
+            System.out.println(new Gson().toJson(userInfo));
+        }
 
-        return "hello world";
+
+        return name.toString();
     }
 
 
